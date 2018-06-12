@@ -61,7 +61,19 @@ Tương ứng: \\
 \end{itemize}
 
 \subsection{Các bước ghi dữ liệu}
+\begin{enumerate}
+    \item Đọc 1 byte từ thanh ghi trạng thái vào AL.  
+    \item And giá trị nhận được với 0x1. 
+    \item Nếu giá trị thu được bằng 0, quay lại bước 1. 
+    \item Gán giá trị cần gửi vào AL và ghi ra thanh ghi đệm phát của 8251. 
+\end{enumerate}
 
 \subsection{Các bước đọc dữ liệu}
+\begin{enumerate}
+    \item Đọc 1 byte từ thanh ghi trạng thái vào AL.  
+    \item And giá trị nhận được với 0x2. 
+    \item Nếu giá trị thu được bằng 0, quay lại bước 1. 
+    \item Đọc giá trị từ thanh ghi đệm phát của 8251 vào AL. 
+\end{enumerate}
 
 \end{document}
